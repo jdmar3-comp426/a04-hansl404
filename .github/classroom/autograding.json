@@ -2,7 +2,7 @@
   "tests": [
     {
       "name": "API OK",
-      "setup": "SHELL=/bin/bash && npm install --silent",
+      "setup": "SHELL=/bin/bash && npm install --silent && rm user.db",
       "run": "(timeout 5s node server.js; exit 0) & sleep 1s && curl -s -X GET http://localhost:5000/app/ && sleep 5s",
       "input": "",
       "output": "{\"message\":\"Your API works! (200)\"}",
